@@ -18,9 +18,8 @@ import Header from '../components/Header.astro';
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
-		<div class="absolute top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div>
-		<Header/>
+	<body class="relative">
+		<div class="absolute top-0 bottom-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>		<Header/>
 		<slot />
 	</body>
 </html>
@@ -30,11 +29,19 @@ import Header from '../components/Header.astro';
 	}
 	html {
 		font-family: system-ui, sans-serif;
+		scroll-behavior: smooth;
 	}
 	body{
 		display: flex;
 		flex-direction: column;
 		background: #050505;
-		height: 100vh;
+		min-height: 100vh;
+		overscroll-behavior: none;
 	}
+	@media (prefers-reduced-motion: reduce) {
+        html {
+        	scroll-behavior: auto;
+        }
+    }
+
 </style>

@@ -1,0 +1,31 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCE = [
+    
+    {
+        date: "Enero 2023 - Septiembre 2023",
+        title: "Técnico en Programación de Software",
+        company: "SENA",
+        description:
+        "Responsable de la plataforma, componentes y utilidades para la creación y desarrollo de aplicaciones web. Mejora de un 30% en la entrega de software. Implantación de medidas de integración continua y despliegue con A/B testing en más de 15 equipos.",
+    },
+    {
+        date: "Actualmente...",
+        title: "Aprendiz de Programación",
+        company: "Gelco SAS",
+        description:
+        "Apoyo al área de Gestión de Calidad e implementación de nuevas ideas web.",
+        link: "https://github.com/kkrlosdev/hr-project/",
+    },
+]
+---
+
+<ol class="relative mt-16">
+    {
+        EXPERIENCE.map((experience) => (
+            <li class="">
+            <ExperienceItem {...experience} />
+            </li>
+        ))
+    }
+</ol>
