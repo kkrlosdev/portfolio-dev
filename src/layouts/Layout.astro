@@ -6,6 +6,7 @@ interface Props {
 
 const { description, title } = Astro.props;
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <!doctype html>
@@ -14,13 +15,15 @@ import Header from '../components/Header.astro';
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/icon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="relative">
-		<div class="absolute top-0 bottom-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>		<Header/>
+	<body>
+		<div class="absolute top-0 bottom-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+		<Header/>
 		<slot />
+		<Footer/>
 	</body>
 </html>
 <style is:global>
@@ -34,7 +37,7 @@ import Header from '../components/Header.astro';
 	body{
 		display: flex;
 		flex-direction: column;
-		background: #050505;
+		background: rgba(8.5, 8.5, 8.5, 0.9);
 		min-height: 100vh;
 		overscroll-behavior: none;
 	}
