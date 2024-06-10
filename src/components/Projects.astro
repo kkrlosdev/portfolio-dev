@@ -1,0 +1,86 @@
+---
+import NextJS from "./icons/NextJS.astro"
+import React from './icons/React.astro'
+import Tailwind from './icons/Tailwind.astro'
+import Django from './icons/Django.astro'
+import HTMLIcon from './icons/HTML.astro'
+import Bootstrap from './icons/Bootstrap.astro'
+import GitHub from "./icons/GitHub.astro"
+
+const TAGS = {
+    NEXT: {
+        name: 'Next.js',
+        class: 'bg-black text-white border border-white',
+        icon: NextJS
+    },
+    REACT: {
+        name: 'React',
+        class: 'bg-sky-600 text-white border border-white',
+        icon: React
+    },
+    TAILWIND: {
+        name: 'Tailwind',
+        class: 'bg-[#003159] text-white border border-white',
+        icon: Tailwind
+    },
+    DJANGO: {
+        name: 'Django',
+        class: 'bg-green-900 text-white border border-white',
+        icon: Django
+    },
+    HTML: {
+        name: 'HTML',
+        class: 'bg-orange-800 text-white border border-white',
+        icon: HTMLIcon
+    },
+    BOOTSTRAP: {
+        name: 'BootStrap',
+        class: 'bg-purple-900 text-white border border-white',
+        icon: Bootstrap
+    }
+}
+
+const PROJECTS = [
+    {
+        title: 'DDHH Gelco - Derechos Humanos',
+        description: 'Página para formación sobre los Derechos Humanos en Gelco SAS, recursos y mucha información sobre los Derechos Humanos.',
+        link: '#',
+        github: 'https://github.com/kkrlosdev/hr-project/',
+        image: '/projects/HrProject.webp',
+        tags: [TAGS.NEXT, TAGS.REACT, TAGS.TAILWIND],
+    },
+    {
+        title: 'Tienda Virtual',
+        description: 'Tienda Virtual construida con Django, HTML, BootStrap. Hace parte del curso de Desarrollo de Aplicaciones Web con Django de CodigoFacilito.',
+        link: '#',
+        github: 'https://github.com/kkrlosdev/tienda-virtual/',
+        image: '/projects/TiendaVirtual.webp',
+        tags: [TAGS.DJANGO, TAGS.HTML, TAGS.BOOTSTRAP]
+    }
+]
+---
+
+{
+    PROJECTS.map(({title, description, tags, github, image}) =>
+        <article class="mt-3">
+            <h3 class="text-yellow-200 font-semibold text-2xl">{title}</h3>
+            <p class="opacity-90 my-1">{description}</p>
+            <div class="flex justify-between items-center mb-2">
+                <ul class="flex gap-x-4">
+                    {tags.map((tag) => (
+                        <li>
+                            <span class={`flex gap-x-2 text-sm rounded-full ${tag.class} py-1 px-2 items-center`}>
+                                <tag.icon class="size-4"/> {tag.name}
+                            </span>
+                        </li>
+                    ))}
+                </ul>
+                <a target="_blank" class="flex gap-x-2 w-fit items-center border border-white px-2 py-1 rounded-full text-sm
+                    hover:bg-white/20 transition" href={github}>
+                    <GitHub class="size-4"/>Código
+                </a>
+            </div>
+            <img class="rounded shadow-white/15" src={image} alt={`Captura de pantalla del proyecto ${title}`}>
+        </article>
+    )
+}

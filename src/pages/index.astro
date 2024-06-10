@@ -8,37 +8,51 @@ import SocialPill from '../components/SocialPill.astro'
 import Experience from '../components/Experience.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import Briefcase from '../components/icons/Briefcase.astro';
+import ProjectsIcon from '../components/icons/ProjectsIcon.astro';
+import Projects from '../components/Projects.astro';
+import About from '../components/icons/About.astro';
+import AboutMe from '../components/AboutMe.astro'
 ---
 
 <Layout title="kkrlosdev | Portafolio - Desarrollador y Programador Web."
 		description="Portafolio personal de Carlos Rodríguez, Programador Web BackEnd, Tech-Stack: HTML, CSS, JS, NextJS, Django, Postgres.">
-	<main>
+	<main class="px-4">
 		<SectionContainer class="py-44 pb-22">
-			<h1 class="text-white text-5xl font-bold flex gap-x-4 pb-3">Hola, soy kkrlosdev <a href="https://linkedin.com/in/carlosrodriguez1205/"
+			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex gap-x-4 pb-6 lg:pb-10">Hola, soy kkrlosdev <a href="https://linkedin.com/in/carlosrodriguez1205/"
 																								target="_blank"
 																								rel="noopener" 
 																								class="flex justify-center items-center">
 																								<Badge>Realizando prácticas laborales</Badge></a></h1>
-			<h2 class="text-2xl opacity-85 text-wrap"><span class="text-yellow-200/90">Programador de Software y Desarrollador Web.</span> <span class="text-red-200/100">De Barranquilla, Colombia.</span> <span class="opacity-75 text-blue-200/100">Digitalizador de ideas, me encuentro en una etapa continua de aprendizaje.</span></h2>
-			<nav class="flex gap-x-4 mt-5">
+			<h2 class="text-2xl opacity-85 max-w-[675px] text-wrap"><span class="text-yellow-200/90">Programador de Software y Desarrollador Web.</span> <span class="text-red-200/100">De Barranquilla, Colombia.</span> <span class="opacity-75 text-blue-200/100">Digitalizador de ideas, me encuentro en una etapa continua de aprendizaje.</span></h2>
+			<nav class="flex gap-4 mt-8 flex-wrap">
 					<SocialPill href="https://linkedin.com/in/carlosrodriguez1205">
-						<LinkedIn class="size-6"/>
+						<LinkedIn class="size-4 lg:size-6"/>
 						LinkedIn
 					</SocialPill>
 					<SocialPill href="https://github.com/kkrlosdev/">
-						<GitHub class="size-6"/>
+						<GitHub class="size-4 lg:size-6"/>
 						GitHub
 					</SocialPill>
-					<SocialPill href="https://github.com/kkrlosdev/">
-						<Gmail class="size-6"/>
+					<SocialPill href="mailto:rocarlos1205@gmail.com">
+						<Gmail class="size-4 lg:size-6"/>
 						rocarlos1205@gmail.com
 					</SocialPill>
 			</nav>
 		</SectionContainer>
 
 		<SectionContainer id="experience">
-			<h2 class="text-2xl font-semibold mb-6 items-center flex gap-x-2"><Briefcase class="size-8"/> Experiencia laboral</h2>
+			<h2 class="text-2xl font-semibold mb-6 mt-5 items-center flex gap-x-2"><Briefcase class="size-8"/> Experiencia</h2>
 			<Experience/>
+		</SectionContainer>
+
+		<SectionContainer id="projects" class="mt-24">
+			<h2 class="text-2xl font-semibold mb-6 mt-5 items-center flex gap-x-2"><ProjectsIcon class="size-8"/> Proyectos</h2>
+			<Projects/>
+		</SectionContainer>
+
+		<SectionContainer id="aboutme" class="mt-24">
+			<h2 class="text-2xl font-semibold mb-6 mt-5 items-center flex gap-x-2"><About class="size-8"/> Sobre mí</h2>
+			<AboutMe/>
 		</SectionContainer>
 	</main>
 </Layout>
