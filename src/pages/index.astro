@@ -17,7 +17,7 @@ import AboutMe from '../components/AboutMe.astro'
 <Layout title="kkrlosdev | Portafolio - Desarrollador y Programador Web."
 		description="Portafolio personal de Carlos Rodríguez, Programador Web BackEnd, Tech-Stack: HTML, CSS, JS, NextJS, Django, Postgres.">
 	<main class="px-4">
-		<SectionContainer class="py-44 pb-22">
+		<SectionContainer class="py-44 pb-22" id="home">
 			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex gap-x-4 pb-6 lg:pb-10">Hola, soy kkrlosdev <a href="https://linkedin.com/in/carlosrodriguez1205/"
 																								target="_blank"
 																								rel="noopener" 
@@ -34,24 +34,24 @@ import AboutMe from '../components/AboutMe.astro'
 						GitHub
 					</SocialPill>
 					<SocialPill href="mailto:rocarlos1205@gmail.com">
-						<Gmail class="size-4 lg:size-6"/>
+						<Gmail class="size-4 lg:size-6 "/>
 						rocarlos1205@gmail.com
 					</SocialPill>
 			</nav>
 		</SectionContainer>
 
 		<SectionContainer id="experience">
-			<h2 class="text-2xl font-semibold mb-6 mt-5 items-center flex gap-x-2"><Briefcase class="size-8"/> Experiencia</h2>
+			<h2 class="text-2xl text-white font-semibold mb-6 mt-5 items-center flex gap-x-2"><Briefcase class="size-8"/> Experiencia</h2>
 			<Experience/>
 		</SectionContainer>
 
 		<SectionContainer id="projects" class="mt-24">
-			<h2 class="text-2xl font-semibold mb-6 mt-5 items-center flex gap-x-2"><ProjectsIcon class="size-8"/> Proyectos</h2>
+			<h2 class="text-2xl text-white font-semibold mb-6 mt-5 items-center flex gap-x-2"><ProjectsIcon class="size-8"/> Proyectos</h2>
 			<Projects/>
 		</SectionContainer>
 
 		<SectionContainer id="aboutme" class="mt-24">
-			<h2 class="text-2xl font-semibold mb-6 mt-5 items-center flex gap-x-2"><About class="size-8"/> Sobre mí</h2>
+			<h2 class="text-2xl text-white font-semibold mb-6 mt-5 items-center flex gap-x-2"><About class="size-8"/> Sobre mí</h2>
 			<AboutMe/>
 		</SectionContainer>
 	</main>
